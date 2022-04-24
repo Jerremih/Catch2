@@ -65,7 +65,7 @@ jobs:
             build_type: Debug
             std: 14
             other_pkgs: clang-10 valgrind
-            cmake_configurations: -DMEMORYCHECK_COMMAND=`which valgrind`
+            cmake_configurations: -DMEMORYCHECK_COMMAND=`which valgrind` -DMEMORYCHECK_COMMAND_OPTIONS="-q --track-origins=yes --leak-check=full --num-callers=50 --show-leak-kinds=definite --error-exitcode=1"
             other_ctest_args: -T memcheck
 
 
